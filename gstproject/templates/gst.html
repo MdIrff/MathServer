@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GST Calculator</title>
+</head>
+<body>
+
+<h2>GST Bill Calculator</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    Price:
+    <input type="number" name="price" required>
+    <br><br>
+
+    GST Percentage:
+    <input type="number" name="gst" required>
+    <br><br>
+
+    <input type="submit" value="Calculate">
+</form>
+
+{% if bill %}
+<h3>Total Bill Amount = ₹{{ bill }}</h3>
+{% endif %}
+
+</body>
+</html>
